@@ -3,262 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlphaCMO — Your AI CMO That Never Sleeps</title>
-    <meta name="description" content="AlphaCMO finds viral trends, writes scripts, creates avatar videos, and publishes — all while you sleep. $750/month. No equity. No content team.">
+    <title>AlphaCMO — AI That Finds Alpha and Creates Alpha</title>
+    <meta name="description" content="Your AI CMO that finds viral trends, creates branded content, and publishes — all while you sleep. No cameras. No content team. No equity.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alphacmo.ai">
+    <meta property="og:title" content="AlphaCMO — Your AI CMO That Never Sleeps">
+    <meta property="og:description" content="Finds viral trends at 2AM. Creates avatar videos. Publishes to Instagram. All while you sleep.">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <!-- =====================================================
-         THRIVECART SETUP — REPLACE THESE 2 VALUES:
-         1. YOUR_SUBDOMAIN = your ThriveCart subdomain
-         2. YOUR_PRODUCT_ID = your product ID number
-         Find product ID next to your product on the ThriveCart dashboard
-         ===================================================== -->
-    <script async src="//YOUR_SUBDOMAIN.thrivecart.com/embed/v1/thrivecart.js"></script>
-
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-        :root{--bg:#000;--t1:#fff;--t2:#999;--t3:#555;--green:#00ff88;--green-d:rgba(0,255,136,.12);--green-g:rgba(0,255,136,.25);--border:#1a1a1a;--card:#0a0a0a}
+        :root{
+            --bg:#000;--bg2:#0a0a0a;--bg3:#0d0d0d;
+            --t1:#fff;--t2:#888;--t3:#555;
+            --green:#00ff88;--green-d:rgba(0,255,136,.15);--green-g:rgba(0,255,136,.3);
+            --border:#1a1a1a;
+            --f:'Inter',sans-serif;--fc:'Fira Code',monospace;
+        }
         html{font-size:16px;-webkit-font-smoothing:antialiased}
-        body{background:var(--bg);color:var(--t1);font-family:'Inter',sans-serif;line-height:1.6}
+        body{background:var(--bg);color:var(--t1);font-family:var(--f);min-height:100vh;overflow-x:hidden}
         body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:0}
 
-        .wrap{position:relative;z-index:1;max-width:720px;margin:0 auto;padding:0 24px}
+        /* Terminal bar */
+        .term{position:relative;z-index:2;background:var(--bg2);border-bottom:1px solid var(--border);padding:10px 24px;font-family:var(--fc);font-size:11px;color:var(--t3);line-height:1.5;overflow:hidden;max-height:80px}
+        .term .ln{white-space:nowrap}
+        .term .ln::before{content:'>';margin-right:8px}
+        .term .ln.on{color:var(--green)}
 
-        /* Nav */
-        nav{padding:16px 24px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
-        nav .logo{font-size:20px;font-weight:800;letter-spacing:-.5px}
-        nav a{color:var(--t2);font-size:13px;text-decoration:none;font-weight:500;transition:color .2s}
-        nav a:hover{color:var(--t1)}
+        /* Header */
+        .hdr{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--border)}
+        .hdr-l{display:flex;align-items:center;gap:14px}
+        .hdr h1{font-size:22px;font-weight:800;letter-spacing:-.5px}
+        .badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border:1px solid var(--border);border-radius:100px;font-size:11px;font-weight:600;letter-spacing:.5px;color:var(--t2)}
+        .badge .dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:pulse 2s ease-in-out infinite;box-shadow:0 0 6px var(--green-g)}
+        @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+        .hdr-r{display:flex;align-items:center;gap:16px}
+        .hdr-r .link{font-size:13px;font-weight:500;color:var(--t2);text-decoration:none;transition:color .2s}
+        .hdr-r .link:hover{color:var(--t1)}
+        .hdr-r .btn{font-size:13px;font-weight:600;color:var(--bg);background:var(--t1);padding:8px 20px;border-radius:6px;text-decoration:none;border:none;cursor:pointer;font-family:var(--f);transition:opacity .2s}
+        .hdr-r .btn:hover{opacity:.85}
 
-        /* Hero */
-        .hero{padding:80px 0 60px;text-align:center}
-        .hero .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border:1px solid var(--border);border-radius:100px;font-size:12px;color:var(--t2);margin-bottom:24px}
-        .hero .badge .dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:p 2s ease-in-out infinite}
-        @keyframes p{0%,100%{opacity:1}50%{opacity:.4}}
-        .hero h1{font-size:clamp(36px,7vw,56px);font-weight:900;letter-spacing:-2px;line-height:1.05;margin-bottom:20px}
-        .hero h1 em{font-style:normal;color:var(--green)}
-        .hero .sub{font-size:18px;color:var(--t2);max-width:540px;margin:0 auto 32px;line-height:1.6}
-        .hero .sub strong{color:var(--t1);font-weight:600}
+        /* Main content */
+        .main{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:calc(100vh - 140px);padding:48px 24px;text-align:center}
 
-        /* CTA button */
-        .cta-btn{display:inline-flex;align-items:center;padding:16px 36px;font-family:inherit;font-size:16px;font-weight:700;color:#000;background:var(--green);border:none;border-radius:8px;cursor:pointer;transition:all .2s;text-decoration:none;letter-spacing:-.2px}
-        .cta-btn:hover{background:#00e67a;box-shadow:0 0 30px var(--green-g);transform:translateY(-1px)}
-        .cta-sub{font-size:13px;color:var(--t3);margin-top:12px}
+        .tagline{font-size:clamp(40px,8vw,64px);font-weight:900;letter-spacing:-2px;line-height:1.05;margin-bottom:20px;max-width:700px}
+        .tagline em{font-style:normal;color:var(--green)}
 
-        /* Stats bar */
-        .stats{display:flex;justify-content:center;gap:48px;padding:48px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:0 0 64px}
-        .stat{text-align:center}
-        .stat-n{font-size:32px;font-weight:800;color:var(--green)}
-        .stat-l{font-size:12px;color:var(--t3);margin-top:4px;text-transform:uppercase;letter-spacing:1px}
+        .sub{font-size:18px;color:var(--t2);max-width:520px;line-height:1.6;margin-bottom:40px}
 
-        /* Section */
-        section{padding:48px 0}
-        section h2{font-size:28px;font-weight:800;letter-spacing:-.5px;margin-bottom:8px}
-        section .section-sub{font-size:15px;color:var(--t2);margin-bottom:32px}
+        /* CTA group */
+        .ctas{display:flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:center}
+        .cta-primary{display:inline-flex;align-items:center;padding:14px 32px;font-family:var(--f);font-size:15px;font-weight:600;color:#000;background:var(--green);border:none;border-radius:8px;cursor:pointer;transition:all .2s;text-decoration:none;letter-spacing:-.2px}
+        .cta-primary:hover{background:#00e67a;box-shadow:0 0 24px var(--green-g);transform:translateY(-1px)}
+        .cta-secondary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;font-family:var(--f);font-size:15px;font-weight:500;color:var(--t2);background:transparent;border:1px solid var(--border);border-radius:8px;cursor:pointer;text-decoration:none;transition:all .2s}
+        .cta-secondary:hover{border-color:var(--green);color:var(--t1);background:var(--green-d)}
+        .cta-secondary .dot-sm{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s ease-in-out infinite}
 
-        /* How it works */
-        .step{display:flex;gap:16px;margin-bottom:28px}
-        .step-num{width:32px;height:32px;border-radius:50%;background:var(--green-d);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;margin-top:2px}
-        .step-content h3{font-size:16px;font-weight:700;margin-bottom:4px}
-        .step-content p{font-size:14px;color:var(--t2);line-height:1.6}
+        .cta-note{font-size:13px;color:var(--t3);margin-top:16px}
 
-        /* Pricing */
-        .pricing{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px}
-        .price-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:28px;transition:border-color .2s}
-        .price-card:hover{border-color:var(--green)}
-        .price-card.featured{border-color:var(--green);position:relative}
-        .price-card.featured::before{content:'FOUNDING MEMBER';position:absolute;top:-10px;left:24px;font-size:10px;font-weight:700;letter-spacing:1px;color:#000;background:var(--green);padding:2px 10px;border-radius:4px}
-        .price-card .price{font-size:36px;font-weight:900;letter-spacing:-1px;margin-bottom:4px}
-        .price-card .price span{font-size:16px;font-weight:400;color:var(--t2)}
-        .price-card .desc{font-size:13px;color:var(--t2);margin-bottom:20px;line-height:1.5}
-        .price-card ul{list-style:none;margin-bottom:24px}
-        .price-card li{font-size:13px;color:var(--t2);padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04)}
-        .price-card li::before{content:'✓';color:var(--green);margin-right:8px;font-weight:700}
-        .price-card li:last-child{border-bottom:none}
-        .price-card .cta-btn{width:100%;justify-content:center;font-size:14px;padding:12px}
-
-        /* FAQ */
-        .faq{margin-bottom:16px;border-bottom:1px solid var(--border);padding-bottom:16px}
-        .faq summary{font-size:15px;font-weight:600;cursor:pointer;padding:8px 0;list-style:none;display:flex;justify-content:space-between;align-items:center}
-        .faq summary::after{content:'+';font-size:20px;color:var(--t3);transition:transform .2s}
-        .faq[open] summary::after{transform:rotate(45deg)}
-        .faq p{font-size:14px;color:var(--t2);line-height:1.7;padding:8px 0 4px}
+        /* Pipeline */
+        .pipeline{display:flex;align-items:center;gap:0;margin-top:56px;opacity:.5}
+        .pipe-step{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--t3);padding:0 12px}
+        .pipe-arrow{color:var(--t3);font-family:var(--fc);font-size:12px}
 
         /* Footer */
-        footer{border-top:1px solid var(--border);padding:32px 0;margin-top:48px}
-        footer p{font-size:12px;color:var(--t3);text-align:center}
-        footer a{color:var(--t3);text-decoration:none}
+        footer{position:relative;z-index:2;border-top:1px solid var(--border);padding:24px}
+        .foot-inner{max-width:700px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+        footer a{font-size:12px;color:var(--t3);text-decoration:none;transition:color .2s}
+        footer a:hover{color:var(--t1)}
+        .foot-links{display:flex;gap:20px}
+        .foot-copy{font-size:12px;color:var(--t3);opacity:.6}
+
+        /* Signup modal */
+        .modal-overlay{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.75);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;padding:20px}
+        .modal-overlay.open{display:flex}
+        .modal{background:#fff;color:#000;border-radius:12px;padding:36px;max-width:400px;width:100%;position:relative;animation:modalIn .25s ease}
+        @keyframes modalIn{from{opacity:0;transform:translateY(16px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+        .modal-close{position:absolute;top:14px;right:18px;background:none;border:none;font-size:24px;cursor:pointer;color:#999;line-height:1}
+        .modal-close:hover{color:#000}
+        .modal h2{font-size:24px;font-weight:800;margin-bottom:6px;letter-spacing:-.3px}
+        .modal p{font-size:14px;color:#666;margin-bottom:24px;line-height:1.5}
+        .modal input{display:block;width:100%;padding:13px 16px;font-family:var(--f);font-size:14px;border:1px solid #ddd;border-radius:8px;margin-bottom:12px;outline:none;transition:border-color .2s}
+        .modal input:focus{border-color:#000}
+        .modal input::placeholder{color:#bbb}
+        .modal .modal-submit{display:block;width:100%;padding:14px;font-family:var(--f);font-size:15px;font-weight:600;color:#fff;background:#000;border:none;border-radius:8px;cursor:pointer;transition:opacity .2s}
+        .modal .modal-submit:hover{opacity:.85}
 
         @media(max-width:640px){
-            .hero{padding:48px 0 40px}
-            .stats{gap:24px}
-            .stat-n{font-size:24px}
-            .pricing{grid-template-columns:1fr}
+            .hdr{padding:12px 16px}
+            .hdr h1{font-size:18px}
+            .main{padding:32px 16px;min-height:calc(100vh - 120px)}
+            .pipeline{display:none}
+            .ctas{flex-direction:column;width:100%}
+            .cta-primary,.cta-secondary{width:100%;justify-content:center}
         }
     </style>
 </head>
 <body>
 
-<nav>
-    <div class="logo">AlphaCMO</div>
-    <a href="/live">Watch it live</a>
-</nav>
-
-<div class="wrap">
-
-<!-- Hero -->
-<section class="hero">
-    <div class="badge"><span class="dot"></span>Now accepting founding members</div>
-    <h1>Your AI CMO that <em>never sleeps</em></h1>
-    <p class="sub">AlphaCMO finds viral trends at 2AM, writes scripts in your brand voice, creates avatar videos, and publishes to Instagram — <strong>all while you sleep.</strong></p>
-
-    <!-- THRIVECART TRIGGER — replace YOUR_SUBDOMAIN and YOUR_PRODUCT_ID -->
-    <a href="javascript:;" class="cta-btn thrivecart-button" data-thrivecart-account="YOUR_SUBDOMAIN" data-thrivecart-product="YOUR_PRODUCT_ID">Get AlphaCMO →</a>
-    <p class="cta-sub">From $497/month · No contracts · Cancel anytime</p>
-</section>
-
-<!-- Stats -->
-<div class="stats">
-    <div class="stat"><div class="stat-n">24/7</div><div class="stat-l">Always on</div></div>
-    <div class="stat"><div class="stat-n">2AM</div><div class="stat-l">Nightly scout</div></div>
-    <div class="stat"><div class="stat-n">95%</div><div class="stat-l">Hands-off</div></div>
-    <div class="stat"><div class="stat-n">$0</div><div class="stat-l">Equity</div></div>
+<!-- Terminal bar -->
+<div class="term" id="term">
+    <div class="ln">Scanning #marketing for viral talking-head reels...</div>
+    <div class="ln">Found 12 reels (original audio, 1000+ likes, 15-90s)</div>
+    <div class="ln">Transcribing A7K2 via Whisper... viral score: 87</div>
+    <div class="ln on">Rewriting script for Nextgen brand voice...</div>
 </div>
 
-<!-- How it works -->
-<section>
-    <h2>How it works</h2>
-    <p class="section-sub">AlphaCMO runs your content engine in 4 steps. You just approve.</p>
-
-    <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-content">
-            <h3>Scout</h3>
-            <p>Every night at 2AM, AlphaCMO scans Instagram for viral talking-head reels in your niche. Filters for original audio, 1,000+ engagement, and speech content. Ranks by viral potential.</p>
-        </div>
+<!-- Header -->
+<div class="hdr">
+    <div class="hdr-l">
+        <h1>AlphaCMO</h1>
+        <span class="badge"><span class="dot"></span>LIVE</span>
     </div>
-    <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-content">
-            <h3>Rewrite</h3>
-            <p>The best scripts get rewritten for your brand voice, your audience, and your CTA. Same viral hook structure, completely original content.</p>
-        </div>
+    <div class="hdr-r">
+        <a class="link" href="/live">Watch it live</a>
+        <button class="btn" onclick="openModal()">Get Started</button>
     </div>
-    <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-content">
-            <h3>Create</h3>
-            <p>AI avatar videos are generated in 1080x1920 vertical format with branded overlays, synced captions, and your visual identity. Professional quality, zero cameras.</p>
-        </div>
-    </div>
-    <div class="step">
-        <div class="step-num">4</div>
-        <div class="step-content">
-            <h3>Publish</h3>
-            <p>You approve in Slack with one word. AlphaCMO publishes to Instagram Reels automatically. TikTok and YouTube Shorts coming soon.</p>
-        </div>
-    </div>
-</section>
-
-<!-- The pitch -->
-<section>
-    <h2>A CMO costs $250K/year</h2>
-    <p class="section-sub">An agency costs $15K/month. A content team costs headcount and equity. AlphaCMO costs a fraction and works 24/7.</p>
-
-    <div style="background:var(--card);border:1px solid var(--border);border-radius:12px;padding:28px;margin-bottom:24px">
-        <p style="font-size:15px;color:var(--t2);line-height:1.8">A reel went viral in your niche yesterday. Your competitor used it. They rewrote it for their audience, published an avatar video, and got 40K views.</p>
-        <p style="font-size:15px;color:var(--t2);line-height:1.8;margin-top:12px">You didn't even see it.</p>
-        <p style="font-size:15px;color:var(--t1);line-height:1.8;margin-top:12px;font-weight:600">AlphaCMO would have caught it at 2AM, rewritten it by 2:15AM, and had a video ready for your approval by morning.</p>
-    </div>
-</section>
-
-<!-- Pricing -->
-<section>
-    <h2>Pricing</h2>
-    <p class="section-sub">Simple. No setup fees. No contracts. Cancel anytime.</p>
-
-    <div class="pricing">
-        <div class="price-card featured">
-            <div class="price">$497<span>/mo</span></div>
-            <div class="desc">Founding member pricing. Limited to 10 spots.</div>
-            <ul>
-                <li>Nightly trend scouting (2AM)</li>
-                <li>Unlimited ad-hoc reel processing</li>
-                <li>Brand voice script rewriting</li>
-                <li>AI avatar video creation</li>
-                <li>Branded overlays + captions</li>
-                <li>Instagram Reels publishing</li>
-                <li>Dedicated Slack channel</li>
-                <li>ClickUp pipeline dashboard</li>
-            </ul>
-            <a href="javascript:;" class="cta-btn thrivecart-button" data-thrivecart-account="YOUR_SUBDOMAIN" data-thrivecart-product="YOUR_PRODUCT_ID">Claim Founding Spot →</a>
-        </div>
-        <div class="price-card">
-            <div class="price">$750<span>/mo</span></div>
-            <div class="desc">Full service. Everything in Founding + strategy.</div>
-            <ul>
-                <li>Everything in Founding Member</li>
-                <li>Weekly strategy call (30 min)</li>
-                <li>Custom hashtag strategy</li>
-                <li>Multi-platform publishing</li>
-                <li>Priority support</li>
-                <li>Meta Ads integration (coming soon)</li>
-            </ul>
-            <a href="javascript:;" class="cta-btn thrivecart-button" data-thrivecart-account="YOUR_SUBDOMAIN" data-thrivecart-product="YOUR_PRODUCT_ID" style="background:#fff;color:#000">Get Full Service →</a>
-        </div>
-    </div>
-</section>
-
-<!-- FAQ -->
-<section>
-    <h2>Questions</h2>
-    <p class="section-sub"></p>
-
-    <details class="faq">
-        <summary>What exactly does AlphaCMO do?</summary>
-        <p>AlphaCMO is an AI agent that runs as your fractional CMO. Every night at 2AM, it scans Instagram for viral talking-head reels in your niche, transcribes and scores them, rewrites the best scripts for your brand voice, generates AI avatar videos, and publishes to your Instagram. You control everything from Slack on your phone.</p>
-    </details>
-    <details class="faq">
-        <summary>Do I need to be on camera?</summary>
-        <p>No. AlphaCMO generates avatar videos using AI. You can use a stock avatar, upload a photo to create a custom avatar, or use your own footage. Zero cameras required.</p>
-    </details>
-    <details class="faq">
-        <summary>How much time does this take me?</summary>
-        <p>About 5 minutes per day. You review scripts and approve videos in Slack. That's it. AlphaCMO handles discovery, writing, video creation, and publishing.</p>
-    </details>
-    <details class="faq">
-        <summary>What platforms does it publish to?</summary>
-        <p>Instagram Reels at launch. TikTok, YouTube Shorts, and Facebook Reels are coming in the next update.</p>
-    </details>
-    <details class="faq">
-        <summary>Can I cancel anytime?</summary>
-        <p>Yes. No contracts, no setup fees. Cancel from your billing dashboard anytime and your service stops at the end of the billing period.</p>
-    </details>
-    <details class="faq">
-        <summary>What do I need to get started?</summary>
-        <p>A Slack workspace, a ClickUp account (free tier works), and an Instagram business account. We handle everything else during onboarding.</p>
-    </details>
-    <details class="faq">
-        <summary>Is the content original?</summary>
-        <p>Yes. AlphaCMO discovers viral hook structures and rewrites them entirely for your brand voice, audience, and CTA. The scripts are original — only the proven hook pattern is borrowed.</p>
-    </details>
-</section>
-
-<!-- Final CTA -->
-<section style="text-align:center;padding:64px 0">
-    <h2>Stop watching competitors go viral.</h2>
-    <p style="color:var(--t2);font-size:16px;margin:12px 0 28px">Get an AI CMO that finds alpha and creates alpha. 24/7.</p>
-    <a href="javascript:;" class="cta-btn thrivecart-button" data-thrivecart-account="YOUR_SUBDOMAIN" data-thrivecart-product="YOUR_PRODUCT_ID">Get AlphaCMO →</a>
-    <p class="cta-sub">Founding member pricing: $497/month · 10 spots remaining</p>
-</section>
-
 </div>
 
-<footer><div class="wrap">
-    <p><a href="/terms">Terms</a> · <a href="/privacy">Privacy</a> · © 2026 AlphaCMO · New Empire AI</p>
-</div></footer>
+<!-- Main -->
+<div class="main">
+    <h2 class="tagline">Your AI CMO that <em>never sleeps</em></h2>
+    <p class="sub">Finds viral trends at 2AM. Writes scripts in your brand voice. Creates avatar videos. Publishes to Instagram. All while you sleep.</p>
 
+    <div class="ctas">
+        <button class="cta-primary" onclick="openModal()">Get AlphaCMO →</button>
+        <a class="cta-secondary" href="/live"><span class="dot-sm"></span>Watch it work live</a>
+    </div>
+    <p class="cta-note">From $497/month · No contracts · No cameras · No equity</p>
+
+    <div class="pipeline">
+        <span class="pipe-step">Scout</span>
+        <span class="pipe-arrow">→</span>
+        <span class="pipe-step">Rewrite</span>
+        <span class="pipe-arrow">→</span>
+        <span class="pipe-step">Create</span>
+        <span class="pipe-arrow">→</span>
+        <span class="pipe-step">Publish</span>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="foot-inner">
+        <div class="foot-links">
+            <a href="/live">Live</a>
+            <a href="/start">Pricing</a>
+            <a href="/about">About</a>
+            <a href="/terms">Terms</a>
+            <a href="/privacy">Privacy</a>
+        </div>
+        <span class="foot-copy">© 2026 AlphaCMO · New Empire AI</span>
+    </div>
+</footer>
+
+<!-- Signup Modal -->
+<div class="modal-overlay" id="signupModal">
+    <div class="modal">
+        <button class="modal-close" onclick="closeModal()">×</button>
+        <h2>Get AlphaCMO</h2>
+        <p>Enter your name and email. We'll get you set up within 24 hours.</p>
+        <input type="text" placeholder="Your name" id="signupName">
+        <input type="email" placeholder="Your email" id="signupEmail">
+        <button class="modal-submit" onclick="handleSignup()">Start now →</button>
+    </div>
+</div>
+
+<script>
+// Terminal cycling
+const tl=[
+'Scanning #contentmarketing for viral reels...','Found 11 reels · filtering uses_original_audio...','Transcribing A7K2 via Whisper... 47s duration',
+'Viral score: 91 · hook: "The agency model is dead..."','Writing to ClickUp → Viral Scripts → analyzed','Rewriting A7K2 for Nextgen brand voice...',
+'Script rewrite complete → Slack for review','Customer approved → avatar generating...','Avatar engine processing (2m 14s)',
+'Avatar engine complete ✓','Compositing 1080x1920 · captions + overlays','A7K2-final.mp4 → Slack for approval',
+'Approved → Metricool → Instagram Reels','Published ✓ → A7K2 complete','Ad-hoc: reel URL in #alpha-inbox',
+'B3M9 → Score: 74 → ClickUp posted','Scanning #agencylife for viral reels...','Found 6 talking-head reels (original audio)',
+'Transcribing X4P1... viral score: 83','Overnight scout report → #alpha-scout'
+];
+const term=document.getElementById('term');let ti=0;
+setInterval(()=>{const ls=term.querySelectorAll('.ln');ls.forEach(l=>l.classList.remove('on'));if(ls.length>=4)ls[0].remove();const n=document.createElement('div');n.className='ln on';n.textContent=tl[ti%tl.length];term.appendChild(n);ti++},3200);
+
+// Modal
+function openModal(){document.getElementById('signupModal').classList.add('open')}
+function closeModal(){document.getElementById('signupModal').classList.remove('open')}
+document.getElementById('signupModal').addEventListener('click',function(e){if(e.target===this)closeModal()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()});
+
+function handleSignup(){
+    const n=document.getElementById('signupName').value.trim();
+    const e=document.getElementById('signupEmail').value.trim();
+    if(!n||!e){alert('Please enter your name and email.');return}
+    // TODO: Send to GHL, ThriveCart, or email list
+    // Example: fetch('/api/signup', {method:'POST', body:JSON.stringify({name:n,email:e})})
+    closeModal();
+    alert('Thanks '+n+'! We\'ll reach out at '+e+' within 24 hours.');
+}
+</script>
 </body>
 </html>

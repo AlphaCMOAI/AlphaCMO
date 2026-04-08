@@ -1,12 +1,13 @@
 {
   "rewrites": [
     { "source": "/live", "destination": "/live.html" },
-    { "source": "/start", "destination": "/start.html" },
-    { "source": "/login", "destination": "/login.html" },
+    { "source": "/sign-in", "destination": "/sign-in.html" },
     { "source": "/about", "destination": "/about.html" },
-    { "source": "/dashboard", "destination": "/dashboard.html" },
+    { "source": "/pricing", "destination": "/pricing.html" },
+    { "source": "/terms", "destination": "/terms.html" },
     { "source": "/privacy", "destination": "/privacy.html" },
-    { "source": "/terms", "destination": "/terms.html" }
+    { "source": "/start", "destination": "/start.html" },
+    { "source": "/dashboard", "destination": "/dashboard.html" }
   ],
   "headers": [
     {
