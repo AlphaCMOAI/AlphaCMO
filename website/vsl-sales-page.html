@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AlphaCMO — 30 Branded Videos on Your Instagram This Month</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fast.vidalytics.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#050505;
+  --surface:#0c0c0c;
+  --card:#111;
+  --border:rgba(255,255,255,.06);
+  --green:#00ff88;
+  --green-soft:rgba(0,255,136,.08);
+  --green-border:rgba(0,255,136,.2);
+  --orange:#ff8a00;
+  --red:#ff4444;
+  --white:#f0f0f0;
+  --t1:#e0e0e0;
+  --t2:#b0b0b0;
+  --t3:#777;
+  --sans:'Instrument Sans',system-ui,sans-serif;
+  --serif:'Newsreader',Georgia,serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--t1);font-family:var(--sans);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* grain */
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
+
+.wrap{max-width:680px;margin:0 auto;padding:0 20px}
+
+/* ── HERO ── */
+.hero{padding:56px 0 0;text-align:center}
+.hero h1{font-family:var(--serif);font-size:clamp(28px,6vw,44px);font-weight:600;line-height:1.2;letter-spacing:-.5px;margin-bottom:16px;color:var(--white)}
+.hero h1 em{font-style:italic;color:var(--green)}
+.hero .sub{font-size:17px;color:var(--t2);max-width:540px;margin:0 auto 40px;line-height:1.6}
+
+/* ── VIDEO ── */
+.vsl{margin:0 auto 0;max-width:720px;padding:0 20px}
+.vsl-frame{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+
+/* ── DIVIDER ── */
+.divider{height:1px;background:var(--border);margin:64px auto;max-width:200px}
+
+/* ── SECTIONS ── */
+section{padding:64px 0}
+.label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:12px}
+.sec-h{font-family:var(--serif);font-size:clamp(24px,5vw,36px);font-weight:600;line-height:1.2;letter-spacing:-.3px;margin-bottom:16px;color:var(--white)}
+.sec-sub{font-size:17px;color:var(--t2);line-height:1.65;margin-bottom:40px}
+
+/* ── PAIN LIST ── */
+.pain li{font-size:16px;padding:14px 0;border-bottom:1px solid var(--border);display:flex;gap:12px;line-height:1.5;color:var(--t2)}
+.pain li::before{content:'✕';color:var(--red);font-weight:700;font-size:14px;flex-shrink:0;margin-top:2px}
+
+/* ── RESULT CARDS ── */
+.result{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:32px 24px;margin-bottom:20px}
+.result .num{font-size:40px;font-weight:700;color:var(--green);line-height:1;margin-bottom:8px;font-family:var(--sans)}
+.result h3{font-size:19px;font-weight:600;margin-bottom:10px;color:var(--white);line-height:1.3}
+.result p{font-size:15px;color:var(--t2);line-height:1.65}
+
+/* ── STEPS ── */
+.steps{list-style:none;counter-reset:s}
+.steps li{counter-increment:s;padding:16px 0;border-bottom:1px solid var(--border);display:flex;gap:14px;align-items:flex-start;font-size:16px;color:var(--t2)}
+.steps li::before{content:counter(s);font-family:var(--sans);font-weight:700;font-size:12px;color:var(--bg);background:var(--green);width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:3px}
+.steps strong{color:var(--white)}
+
+/* ── BEFORE/AFTER ── */
+.ba-grid{display:grid;gap:16px}
+@media(min-width:520px){.ba-grid{grid-template-columns:1fr 1fr}}
+.ba-card{border-radius:10px;padding:28px 24px;border:1px solid var(--border)}
+.ba-card.before{background:rgba(255,68,68,.03);border-color:rgba(255,68,68,.12)}
+.ba-card.after{background:var(--green-soft);border-color:var(--green-border)}
+.ba-card h3{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px}
+.ba-card.before h3{color:var(--red)}
+.ba-card.after h3{color:var(--green)}
+.ba-card li{font-size:15px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.03);color:var(--t2);line-height:1.5;list-style:none}
+
+/* ── CREDIBILITY ── */
+.cred-stats{display:flex;justify-content:center;gap:36px;flex-wrap:wrap;margin-bottom:40px}
+.cred-stat .n{font-size:32px;font-weight:700;color:var(--green);font-family:var(--sans)}
+.cred-stat .l{font-size:12px;color:var(--t3);margin-top:2px}
+.cred-stat{text-align:center}
+
+/* ── PRICING ── */
+.compare-line{font-size:14px;color:var(--t3);text-align:center;margin-bottom:4px}
+.compare-line s{color:var(--red);text-decoration:line-through}
+.tier{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:32px 24px;margin-bottom:16px;position:relative}
+.tier.featured{border-color:var(--green);box-shadow:0 0 40px rgba(0,255,136,.06)}
+.tier-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--green);color:var(--bg);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 14px;border-radius:100px}
+.tier-name{font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--t3);margin-bottom:4px}
+.tier-price{font-size:48px;font-weight:700;color:var(--white);font-family:var(--sans);line-height:1}
+.tier-price span{font-size:16px;color:var(--t3);font-weight:400}
+.tier-per{font-size:15px;color:var(--orange);font-weight:600;margin:4px 0 20px}
+.tier ul{list-style:none;margin-bottom:24px}
+.tier li{font-size:14px;padding:6px 0;color:var(--t2);display:flex;gap:8px;align-items:flex-start}
+.tier li::before{content:'✓';color:var(--green);font-weight:700;flex-shrink:0}
+
+/* ── CTA ── */
+.cta{display:block;width:100%;background:var(--green);color:var(--bg);font-family:var(--sans);font-weight:700;font-size:16px;padding:16px;border-radius:8px;text-decoration:none;text-align:center;border:none;cursor:pointer;transition:all .15s}
+.cta:hover{background:#33ffaa;transform:translateY(-1px);box-shadow:0 6px 24px rgba(0,255,136,.2)}
+.cta-ghost{background:transparent;border:1px solid var(--green);color:var(--green)}
+.cta-ghost:hover{background:var(--green-soft);box-shadow:none;transform:none}
+.cta-note{display:block;text-align:center;font-size:13px;color:var(--t3);margin-top:10px}
+
+/* ── FAQ ── */
+details{border-bottom:1px solid var(--border);padding:16px 0}
+details summary{font-size:16px;font-weight:600;color:var(--white);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+details summary::after{content:'+';font-size:20px;color:var(--t3);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{font-size:15px;color:var(--t2);margin-top:12px;line-height:1.65}
+
+/* ── FOOTER ── */
+footer{padding:48px 0;text-align:center;font-size:12px;color:var(--t3);border-top:1px solid var(--border)}
+footer a{color:var(--t3);text-decoration:underline}
+
+/* ── STICKY MOBILE CTA ── */
+.sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:100;padding:12px 16px;background:rgba(5,5,5,.95);backdrop-filter:blur(8px);border-top:1px solid var(--border)}
+.sticky-cta a{display:block;width:100%;padding:14px;background:var(--green);color:var(--bg);font-family:var(--sans);font-weight:700;font-size:15px;text-align:center;border-radius:8px;text-decoration:none}
+@media(max-width:640px){.sticky-cta{display:block}body{padding-bottom:72px}}
+
+/* ── RESPONSIVE OVERRIDES ── */
+@media(min-width:768px){
+  .hero{padding:80px 0 0}
+  section{padding:80px 0}
+  .result{padding:40px 32px}
+  .tier{padding:40px 32px}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+<div class="wrap">
+  <h1>Wake Up to Branded Videos — Created Overnight From Trends <em>Going Viral in Your Niche Right Now</em></h1>
+  <p class="sub">AlphaCMO finds viral trends, creates branded avatar videos in your voice, and publishes them to your Instagram — every single day — while you sleep.</p>
+</div>
+</section>
+
+<!-- ═══ VSL ═══ -->
+<div class="vsl">
+  <div class="vsl-frame">
+    <div id="vidalytics_embed_KbLitGJyCb09bjDb" style="width: 100%; position:relative; padding-top: 56.19%;"></div>
+  </div>
+</div>
+<script type="text/javascript">
+(function (v, i, d, a, l, y, t, c, s) {
+    y='_'+d.toLowerCase();c=d+'L';if(!v[d]){v[d]={};}if(!v[c]){v[c]={};}if(!v[y]){v[y]={};}var vl='Loader',vli=v[y][vl],vsl=v[c][vl + 'Script'],vlf=v[c][vl + 'Loaded'],ve='Embed';
+    if (!vsl){vsl=function(u,cb){
+        if(t){cb();return;}s=i.createElement("script");s.type="text/javascript";s.async=1;s.src=u;
+        if(s.readyState){s.onreadystatechange=function(){if(s.readyState==="loaded"||s.readyState=="complete"){s.onreadystatechange=null;vlf=1;cb();}};}else{s.onload=function(){vlf=1;cb();};}
+        i.getElementsByTagName("head")[0].appendChild(s);
+    };}
+    vsl(l+'loader.min.js',function(){if(!vli){var vlc=v[c][vl];vli=new vlc();}vli.loadScript(l+'player.min.js',function(){var vec=v[d][ve];t=new vec();t.run(a);});});
+})(window, document, 'Vidalytics', 'vidalytics_embed_KbLitGJyCb09bjDb', 'https://fast.vidalytics.com/embeds/Bgq58rEy/KbLitGJyCb09bjDb/');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "AlphaCMO — AI Viral Video Engine",
+  "description": "AI Viral Video Creation Engine",
+  "thumbnailUrl": "https://fast.vidalytics.com/video/Bgq58rEy/RnoXPhEEgqUzpe0N/263264/242646__FFMPEG/thumb/thumbnail-5_0.jpg",
+  "uploadDate": "2026-04-10",
+  "duration": "PT308S",
+  "embedUrl": "https://preview.vidalytics.com/embeds/Bgq58rEy/RnoXPhEEgqUzpe0N/"
+}
+</script>
+<div class="vidalytics-ai-transcript" style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;" aria-hidden="true" tabindex="-1">AI Viral Video Creation Engine</div>
+
+<!-- Post-video CTA — highest intent moment -->
+<div class="wrap" style="text-align:center;padding:32px 20px 0">
+  <a href="/checkout" class="cta" style="max-width:420px;margin:0 auto">Get AlphaCMO — Start Today →</a>
+  <p class="cta-note">$499/mo · ~$16/video · Cancel anytime</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══ PAIN ═══ -->
+<section>
+<div class="wrap">
+  <p class="label">The Problem</p>
+  <h2 class="sec-h">You Know You Should Be Posting Every Day. You're Not.</h2>
+  <p class="sec-sub">And every day you don't, someone in your niche is. They're grabbing the attention — and the clients — that should be yours.</p>
+  <ul class="pain">
+    <li>You're too busy running your business to sit in front of a camera</li>
+    <li>Your freelance editor charges $150–$500 per video and takes a week</li>
+    <li>Your agency bills $3K–$10K/month and still moves slower than your competitors post</li>
+    <li>You open AI tools, type a prompt, close the tab — nothing runs while you're not looking</li>
+    <li>Trends come and go before you even see them, let alone create content around them</li>
+    <li>Every day you stay invisible, you're leaving money on the table</li>
+  </ul>
+</div>
+</section>
+
+<!-- ═══ SOLUTION ═══ -->
+<section style="background:var(--surface)">
+<div class="wrap">
+  <p class="label">The Solution</p>
+  <h2 class="sec-h">An AI-Powered Video Engine That Finds Trends, Creates Videos, and Publishes — While You Sleep</h2>
+  <p class="sec-sub" style="margin-bottom:0">AlphaCMO is a fully autonomous AI deployed on its own dedicated infrastructure, trained on YOUR brand, doing one job — making you go viral. Not a template library. Not a content calendar. A machine that produces finished, published videos.</p>
+</div>
+</section>
+
+<!-- ═══ THREE RESULTS ═══ -->
+<section>
+<div class="wrap">
+  <p class="label">What You Get Every Month</p>
+  <h2 class="sec-h">Three Results. Every Month.</h2>
+
+  <div class="result">
+    <div class="num">01</div>
+    <h3>Finds What's Going Viral — Before Your Competitors Do</h3>
+    <p>Every night at 2AM, AlphaCMO scans thousands of reels across your industry hashtags. Transcribes them. Scores them by engagement. By the time you wake up, you've got an overnight scout report with the hottest trending content in your space — already ranked, already ready. You're not guessing what to post. You're working from real signal.</p>
+  </div>
+
+  <div class="result">
+    <div class="num">02</div>
+    <h3>Creates Branded Videos and Publishes Them Same Day</h3>
+    <p>You see a script you like. You say one word — "promote." AlphaCMO rewrites that proven viral script in your brand voice, generates a professional AI avatar video, adds your overlays and captions, and publishes directly to Instagram. Two hours from approval to live. No camera. No editor. No back-and-forth.</p>
+  </div>
+
+  <div class="result">
+    <div class="num">03</div>
+    <h3>Gets Smarter Every Single Day</h3>
+    <p>It tracks which hashtags produce the best content. Learns what hooks resonate. Adapts to your voice. Recommends content angles you wouldn't have found on your own. This isn't a tool you babysit — it improves. Every single day.</p>
+  </div>
+</div>
+</section>
+
+<!-- ═══ HOW IT WORKS ═══ -->
+<section style="background:var(--surface)">
+<div class="wrap">
+  <p class="label">How It Works</p>
+  <h2 class="sec-h">Sign Up. Answer 5 Questions. Videos on Your Instagram.</h2>
+  <ol class="steps">
+    <li><div><strong>Sign up below.</strong> Checkout takes 60 seconds.</div></li>
+    <li><div><strong>Fill out a 5-minute brand questionnaire.</strong> Your voice, your niche, your hashtags, your avatar preference.</div></li>
+    <li><div><strong>Your dedicated AlphaCMO deploys.</strong> Own infrastructure. Own system. Nobody else's content touches yours.</div></li>
+    <li><div><strong>Within 24 hours — your first overnight scout report.</strong> The hottest viral content in your niche, ranked and ready.</div></li>
+    <li><div><strong>Within 72 hours — your first branded video is live on your Instagram.</strong> You approved it from your phone. It published while you worked.</div></li>
+  </ol>
+</div>
+</section>
+
+<!-- ═══ BEFORE / AFTER ═══ -->
+<section>
+<div class="wrap">
+  <p class="label">The Shift</p>
+  <h2 class="sec-h">From Invisible to Inevitable</h2>
+  <div class="ba-grid">
+    <div class="ba-card before">
+      <h3>Before</h3>
+      <ul>
+        <li>Posting once a week — maybe</li>
+        <li>Trends are cold by the time you see them</li>
+        <li>$500/video from a freelancer who takes 5 days</li>
+        <li>Your competitors are posting daily</li>
+        <li>You know content is the play but you can't execute</li>
+      </ul>
+    </div>
+    <div class="ba-card after">
+      <h3>After</h3>
+      <ul>
+        <li>30+ branded videos on your Instagram every month</li>
+        <li>Trends caught at 2AM, videos live before lunch</li>
+        <li>~$16/video — fully produced and published</li>
+        <li>Approve from your phone over coffee</li>
+        <li>Full visibility on your private real-time dashboard</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ CREDIBILITY ═══ -->
+<section style="background:var(--surface);text-align:center">
+<div class="wrap">
+  <p class="label">Built By</p>
+  <h2 class="sec-h">Brian MacDonald</h2>
+  <p class="sec-sub" style="margin:0 auto 32px;max-width:540px">$8M+/year across my own companies. 500+ active clients. I built AlphaCMO for myself first — same problem you have. Not posting enough, always late to trends, bleeding money on agencies that moved too slow.</p>
+  <div class="cred-stats">
+    <div class="cred-stat"><div class="n">$8M+</div><div class="l">Annual Revenue</div></div>
+    <div class="cred-stat"><div class="n">500+</div><div class="l">Active Clients</div></div>
+    <div class="cred-stat"><div class="n">1,000+</div><div class="l">Agents Deployed</div></div>
+  </div>
+</div>
+</section>
+
+<!-- ═══ PRICING ═══ -->
+<section id="pricing">
+<div class="wrap">
+  <p class="label">Choose Your Plan</p>
+  <h2 class="sec-h">Your Competitors Are Already Posting. Pick Your Speed.</h2>
+  <div style="margin-bottom:32px">
+    <p class="compare-line"><s>Freelance editor: $150–$500/video</s></p>
+    <p class="compare-line"><s>Content agency: $3,000–$10,000/month</s></p>
+    <p class="compare-line"><s>Full-time CMO: $250,000/year</s></p>
+  </div>
+
+  <!-- LAUNCH -->
+  <div class="tier">
+    <div class="tier-name">Launch</div>
+    <div class="tier-price">$499 <span>/mo</span></div>
+    <div class="tier-per">~$16/video · 30+ videos/month</div>
+    <ul>
+      <li>Nightly trend discovery across your hashtags</li>
+      <li>Overnight scout reports to your phone</li>
+      <li>Brand-voice script rewriting</li>
+      <li>AI avatar video generation</li>
+      <li>Branded overlays and captions</li>
+      <li>Instagram publishing</li>
+      <li>Private real-time dashboard</li>
+      <li>Telegram support</li>
+    </ul>
+    <a href="/checkout" class="cta">Get Started →</a>
+  </div>
+
+  <!-- DOMINATE -->
+  <div class="tier featured">
+    <div class="tier-badge">Most Popular</div>
+    <div class="tier-name">Dominate</div>
+    <div class="tier-price">$999 <span>/mo</span></div>
+    <div class="tier-per">~$16/video · 60+ videos/month</div>
+    <ul>
+      <li>Everything in Launch</li>
+      <li>Priority rendering queue</li>
+      <li>Weekly 1-on-1 strategy call</li>
+      <li>Multi-platform: Instagram + TikTok + YouTube Shorts</li>
+      <li>Advanced analytics and performance tracking</li>
+      <li>Dedicated Slack channel</li>
+    </ul>
+    <a href="/checkout" class="cta">Get Started →</a>
+  </div>
+
+  <!-- SPECIAL OPS -->
+  <div class="tier">
+    <div class="tier-name">Special Ops</div>
+    <div class="tier-price">$1,999 <span>/mo</span></div>
+    <div class="tier-per">White-glove · Unlimited</div>
+    <ul>
+      <li>Everything in Dominate</li>
+      <li>Custom avatar trained on your likeness</li>
+      <li>Unlimited video output</li>
+      <li>Daily strategy briefs</li>
+      <li>Full brand buildout and onboarding</li>
+      <li>Direct line to Brian</li>
+    </ul>
+    <a href="mailto:brian@nlvl.co?subject=AlphaCMO%20Special%20Ops" class="cta cta-ghost">Contact Us →</a>
+  </div>
+
+  <p class="cta-note">Dedicated system per customer. Nothing publishes without your approval.</p>
+</div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section style="background:var(--surface)">
+<div class="wrap">
+  <p class="label">Questions</p>
+  <h2 class="sec-h" style="margin-bottom:32px">FAQ</h2>
+
+  <details>
+    <summary>Will this actually sound like me?</summary>
+    <p>Yes. AlphaCMO doesn't generate random content. It finds what's ALREADY proven to go viral in your niche, then rewrites it in your voice with your positioning. It's adapting winners — that's what the best content strategists do. We just automated it.</p>
+  </details>
+
+  <details>
+    <summary>Can I see everything before it posts?</summary>
+    <p>Nothing publishes without your one-tap approval. You're always in control.</p>
+  </details>
+
+  <details>
+    <summary>Is my content shared with other customers?</summary>
+    <p>No. Every customer gets their own fully isolated, dedicated system. Your brand config, your voice, your avatar — nobody else's content touches yours.</p>
+  </details>
+
+  <details>
+    <summary>What if I don't like a video?</summary>
+    <p>Skip it. Or tell AlphaCMO what to change. It adapts. You're the boss — AlphaCMO is the employee that works 24/7 and never complains.</p>
+  </details>
+
+  <details>
+    <summary>How much of my time does this take?</summary>
+    <p>About 5 minutes a day. Review your overnight scout report. Say "promote" on the scripts you like. That's it.</p>
+  </details>
+
+  <details>
+    <summary>What kind of results should I expect?</summary>
+    <p>30+ branded, trend-driven avatar videos published to your Instagram every month. You'll go from posting sporadically to posting daily with content that's already proven to resonate.</p>
+  </details>
+</div>
+</section>
+
+<!-- ═══ FINAL CTA ═══ -->
+<section style="text-align:center">
+<div class="wrap">
+  <h2 class="sec-h">Your Competitors Are Posting Right Now. Tomorrow, You Will Be Too.</h2>
+  <p class="sec-sub" style="margin:0 auto 32px;max-width:540px">Click below. Fill out the brand questionnaire. Within 72 hours, your first branded video is live on your Instagram — created from a trend going viral in your niche right now.</p>
+  <a href="/checkout" class="cta" style="max-width:400px;margin:0 auto">Get Started →</a>
+  <p class="cta-note">Dedicated system per customer. Nothing publishes without your approval.</p>
+</div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="wrap">
+    <p>© 2026 AlphaCMO · New Empire AI</p>
+    <p style="margin-top:6px"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></p>
+  </div>
+</footer>
+
+<!-- Sticky mobile CTA -->
+<div class="sticky-cta">
+  <a href="/checkout">Get AlphaCMO — ~$16/video →</a>
+</div>
+
+</body>
+</html>
