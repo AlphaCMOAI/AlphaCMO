@@ -1,6 +1,7 @@
 {
   "rewrites": [
     { "source": "/live", "destination": "/live.html" },
+    { "source": "/live-activity", "destination": "/live-activity.html" },
     { "source": "/sign-in", "destination": "/sign-in.html" },
     { "source": "/about", "destination": "/about.html" },
     { "source": "/pricing", "destination": "/pricing.html" },
