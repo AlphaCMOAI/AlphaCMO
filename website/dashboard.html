@@ -198,7 +198,18 @@ const SB_KEY = 'sb_publishable_Ll3KUfVgGqeCMUTSlAd4bA_YoD-SHkA';
 // ============================================================
 
 const path = window.location.pathname.replace(/\/+$/, '').split('/');
-const CID = path[path.length - 1];
+let CID = path[path.length - 1];
+
+// If no slug in path, try to extract from ThriveCart redirect params
+if (!CID || CID === 'dashboard') {
+    const params = new URLSearchParams(window.location.search);
+    const email = params.get('thrivecart[customer][email]');
+    if (email) {
+        CID = email.split('@')[0].toLowerCase().replace(/\./g, '').replace(/\+/g, '');
+        // Redirect to clean dashboard URL
+        window.history.replaceState(null, '', '/dashboard/' + CID);
+    }
+}
 
 if (!CID || CID === 'dashboard') {
     document.getElementById('loadingState').style.display = 'none';
